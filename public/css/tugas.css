@@ -1,0 +1,967 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap";
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.collapsing {
+    transition-duration: 0.45s;
+} 
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+#sidebar {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    color: rgb(32, 32, 32);
+    transition: all 0.3s;
+    user-select: none;
+}
+#sidebar.active {
+    margin-left: -275px;
+}
+
+/* sidebar-head */
+#sidebar .sidebar-heading {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+#sidebar .hr-logo{
+    width: 275px;
+    border-width: 1px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+/* sidebar-menu */
+#sidebar .sidebarmenu{
+    position: relative;
+    font-size: 14px;
+    font-weight: 510;
+}
+#sidebar .activemenu, 
+#sidebar .inactivemenu:hover{
+    color: black;
+    opacity: 0.9;
+}
+#sidebar .inactivemenu{
+    color: black;
+    opacity: 0.5;
+}
+#sidebar ul.components {
+    padding: 10px 0px;
+}
+#sidebar div ul.nav{
+    padding-right: 50px;
+}
+.panel-heading{
+    padding-top: 16px;
+    padding-right: 8px;
+    height: 100%;
+}
+.panel-heading>a{
+    display:block;
+    color:rgb(167, 167, 167);
+    font-size:14px;
+    border-left: 4px solid transparent;
+    padding: 7px;
+    z-index: -1;
+}
+.panel-heading>a.activemenu{
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    border-left-color: rgb(31, 132, 192);
+}
+.panel-heading>a.inactivemenu:hover{
+    border-left-color: rgba(31, 133, 192, 0.6);
+}
+
+/* sidebar-iconmenu */
+#sidebar .iconmenu{
+    width: 21px; 
+    height: 21px;
+    margin-right: 13px;
+    margin-left: 7px;
+    position: relative;
+    bottom: 1px;
+    opacity: 0.9;
+}
+#sidebar .panel-heading .arrowicon {
+    float: right;
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+.panel-heading.active .arrowicon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* sidebar-submenu */
+#sidebar ul li a {
+    padding: 14px;
+
+}
+#sidebar div ul a {
+    font-size: 0.9em !important;
+    padding-left: 20px !important;
+    display: block;
+    height: 45px;
+}
+#sidebar .nav.submenubg{
+    background-color: rgb(230, 230, 230);
+    width: 87%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: solid rgb(199, 199, 199);
+    border-width: 1px;
+}
+#sidebar .panel-body ul li a.active{
+    opacity: 0.9;
+}
+#sidebar div ul a {
+    background-color: transparent;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+#sidebar div ul a.active,
+#sidebar div ul a:hover {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 275px);
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+#content.active {
+    width: 100%;
+}
+#content .container-fluid {
+    padding: 0 20px 0px 21px;
+}
+#content .page-content>div.row{
+    margin: auto;
+}
+#content .page-content>div.row .menu-semester{
+    width: 7%;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+#content .page-content>div.row .cards{
+    width: 93%;
+    background-color: rgb(230, 230, 230);
+    padding-bottom: 30px;
+}
+#content .pilih-semester{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    padding: 170px 0;
+    height: 50%;
+}
+#content .edit-success{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .card>.status{
+    text-align: center;
+    height: 50%;
+    padding: 30px 25px;
+}
+#content .card>.status>a{
+    font-size: 14px;
+}
+
+/* detail-tugas */
+#detail-tugas{
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    margin-top: 25px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+#detail-tugas>div{
+    margin: auto;
+    width: 100%;
+}
+#detail-tugas .panel-heading{
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+}
+#detail-tugas .panel-heading>div{
+    margin-left: auto;
+    margin-right: auto;
+    user-select: none;
+}
+#detail-tugas .panel-heading a{
+    padding: 0 10px 0 5px;
+}
+#detail-tugas .icon{
+    width: 21px; 
+    height: 21px;
+    margin-bottom: 1px;
+    opacity: 0.9;
+}
+#detail-tugas .panel-heading .arrowicon {
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+#detail-tugas .panel-heading .tugas-setting {
+    padding: 0px;
+    padding-bottom: 3px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    float: right;
+    margin-top: -26px;
+}
+#detail-tugas .panel-heading .setting {
+    height: 18px;
+    width: 18px;
+    opacity: 0.9;
+}
+#detail-tugas #tugas{
+    margin: auto;
+    background: #ddd;
+}
+#detail-tugas .nomor-tugas{
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+#detail-tugas .nama-tugas{
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: rgb(31, 132, 192);
+}
+#detail-tugas .isi{
+    padding: 20px 20px 0 20px;
+}
+#detail-tugas .isi .a{
+    text-align: center;
+    justify-content: center;
+    width: 260px;
+    margin-bottom: 15px;
+}
+
+/* topnavbar */
+#content .navbar-custom {
+    background: rgb(77,97,140);
+    background: linear-gradient(180deg, rgba(77,97,140,1) 0%, rgba(50,118,172,1) 50%, rgb(31, 132, 192) 100%);
+    height: 70px;
+    user-select: none;
+}
+#nav-header{
+    font-size: 16px;
+    color: rgb(235, 235, 235);
+    display: block;
+    position: absolute;
+    margin-left: 55px;
+}
+#nav-header.show {
+    display: block;
+}
+#content .page-content {
+    padding: 0px 17px 35px 17px;
+}
+#content .toggleicon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* user-menu */
+#content .dropdown.hide{
+    display: none;
+}
+#content .dropdown-menu {
+    background-color: #fafafa;
+}
+#content .dropdown-menu a {
+    font-size: 13.4px;
+    font-weight: 510;
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    padding: 8px;
+}
+#content .dropdown-menu a:hover {
+    opacity: 0.8;
+}
+#content .dropdown-menu a:focus {
+    background-color: transparent;
+}
+#content .dropdown-menu .dropdown-divider {
+    border-color: rgb(204, 204, 204);
+}
+#content .dropdown-menu a>span.material-icons-outlined {
+    font-size: 18px;
+    margin-right: 18px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#content .vertical-line{
+    border-left: 1px solid rgb(209, 209, 209);
+    margin-left: 18px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+#content .username.hide{
+    display: none;
+}
+#content .username{
+    color: rgb(235, 235, 235);
+    font-size: 14.5px;
+    font-weight: 510;
+    margin-left: auto;
+}
+#content .img-custom{
+    margin-right: -13px;
+}
+
+/* menu angkatan */
+#content .nav-angkatan {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 14px;
+    font-weight: 510;
+    margin-bottom: 40px;
+    margin-top: -2px;
+}
+#content .nav-angkatan>a {
+    height: 37px;
+    opacity: 0.5;
+    text-align: center;
+    padding: 0 30px 0 30px;
+}
+#content .nav-angkatan a:hover {
+    opacity: 0.9;
+    border-bottom: 3px solid rgba(31, 133, 192, 0.3);
+    transition: all 0.2s;
+}
+#content .nav-angkatan .active,
+#content .nav-angkatan .active:hover{
+    border-bottom: 3px solid rgb(31, 132, 192);
+    opacity: 0.9;
+    transition: none;
+}
+#content #nav-angkatan .nav-item.active{
+    background-color: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.flex-parent {
+    display: flex;
+
+}
+
+/* menu-semester */
+#content .menu-semester .list-group-head{
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 15px 0;
+}
+#content .menu-semester .list-group-item{
+    border: none;
+    border-right: 4px solid transparent !important;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    background-color: transparent;
+    text-align: center;
+}
+#content .list-group-item.active,
+#content .list-group-item.active:hover{
+    border: none;
+    border-right: 4px solid rgb(31, 132, 192) !important;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.9);
+}
+#content .list-group-item:hover{
+    border-right: 4px solid rgba(31, 133, 192, 0.5) !important;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* card */
+#content .card{
+    background-color: rgb(230, 230, 230);
+}
+
+#content .cards nav {
+    width: 95%;
+    margin: auto;
+    font-size: 13px;
+    font-weight: 500;
+}
+#content .cards nav .pagination .page-item>a{
+    color: rgb(122, 122, 122);
+    background-color: transparent;
+    box-shadow: none;
+    border: 1px solid rgb(185, 185, 185);
+}
+#content .cards nav .pagination .page-item>a:hover{
+    background-color: rgba(31, 133, 192, 0.5);
+    color: #fafafa;
+}
+#content .cards nav .pagination .page-item.active>span{
+    background-color: rgb(31, 132, 192);
+    border: 1px solid rgb(31, 132, 192);
+}
+#content .cards nav .pagination .page-item.disabled>span{
+    border: 1px solid rgb(185, 185, 185);
+    background-color: transparent;
+}
+
+/* table */
+#content .table {
+    font-size: 14px !important;
+    color: rgb(88, 88, 88) !important;
+    width: 97% !important;
+    margin:auto !important;
+    margin-bottom: 20px !important;
+    table-layout: fixed !important;
+    margin-top: 20px !important;
+    border-bottom: none !important;
+}
+#content tbody tr {
+    background-color: transparent !important;
+}
+#content .table tr th, #content .table tr td {
+    border-color: rgb(209, 209, 209);
+    text-align: center;
+}
+#content .table td {
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+}
+#content .table td.action div{
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+}
+#content .table td.selesai{
+    color: #44AB72;
+    font-size: 15px;
+    font-weight: 800;
+    background-color: #44ab7242;
+}
+#content .table td.b-s{
+    color: #DF2063;
+    font-size: 11px;
+    background-color: #df206348;
+}
+
+/* datatables */
+#content .table td.dataTables_empty{
+    line-height: 50px;
+}
+#content .cards .dataTables_paginate {
+    width: 95% !important;
+    margin: auto !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    margin-right: 18px !important;
+}
+
+#content .cards .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+}
+#content .cards .dataTables_paginate .paginate_button>a{
+    color: rgb(122, 122, 122);
+    background-color: transparent !important;
+    border: 1px solid rgb(185, 185, 185);
+    box-shadow: none !important;
+    margin-left: -5px !important;
+    padding: 7px 10px !important;
+}
+#content .cards .dataTables_paginate .paginate_button{
+    color: rgb(122, 122, 122);
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+#content .cards .dataTables_paginate .paginate_button>a:hover{
+    background-color: rgba(31, 133, 192, 0.425) !important;
+    border-color: rgba(31, 133, 192, 0.425) !important;
+    color: #fafafa !important;
+}
+#content .cards .dataTables_paginate .paginate_button.active>a{
+    background-color: rgb(31, 132, 192) !important;
+    border-color: rgb(31, 132, 192) !important;
+    color: #fafafa !important;
+}
+#content .cards .dataTables_paginate .paginate_button.disabled>span{
+    border: 1px solid rgb(185, 185, 185);
+    background-color: transparent;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid transparent!important;
+    background-color: transparent!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, transparent))!important;
+    background: -webkit-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -moz-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -ms-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -o-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: linear-gradient(to bottom, transparent 0%, transparent 100%)!important;
+}
+#content .dataTables_length{
+    display: none !important;
+}
+#content .dataTables_filter{
+    display: flex !important;
+    justify-content: center !important;
+    float: left;
+    margin-left: 22px;
+}
+#content .dataTables_filter label{
+    padding: 0px 0 0 0 !important;
+    margin-bottom: -2px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+}
+#content .dataTables_filter label input{
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    box-shadow: none;
+    padding-left: 0;
+    width: 200px !important;
+}
+#content .dataTables_filter label .fa-search{
+    opacity: 0.6;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+#content #peserta_wrapper .table-control{
+    margin-top: 20px;
+}
+#content #peserta_wrapper .cari{
+    display: flex;
+    align-items: center;
+}
+#content #peserta_wrapper .tambah{
+    padding-right: 55px;
+    align-items: center;
+}
+#content .tab-content>.card-control{
+    display: flex;
+    margin: auto;
+    width: 94.9%;
+    margin-top: 20px;
+}
+
+/* table-control */
+#content .btn-ctrl{
+    opacity: 0.7;
+    outline: black;
+}
+#content .btn-tambah{
+    display: flex;
+    margin-left: auto;
+    width: 35px;
+    height: 35px;
+}
+#content .btn-edit,
+#content .btn-delete{
+    width: 30px;
+    height: 30px;
+    padding: 4px 10px 0 10px;
+}
+#content .add{
+    font-size: 21px;
+    margin: 0 0 0 -6px;
+}
+#content .ip2{
+    font-size: 20px;
+    margin: 0 0 0 -6px;
+}
+#content .card-control {
+    width: 95%;
+    margin:auto;
+}
+
+/* info */
+#content .info{
+    width: 97%;
+    margin: auto;
+}
+#content .info-text{
+    font-size: 13px;
+    opacity: 0.7;
+}
+#content .alert{
+    padding: 10px 0;
+}
+#content .info-icon{
+    opacity: 0.5;
+    padding-right: 10px;
+    margin-top: -1px;
+    font-size: 22px;
+}
+#content .btn-pdf{
+    font-size: 13px;
+}
+
+/* modal */
+#content .modal-title{
+    font-size: 16px;
+    color: rgb(31, 132, 192);
+}
+#content .title-delete{
+    color: #df2020;
+}
+#content .modal-body{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+}
+#content .modal-lg {
+    max-width: 30%;
+}
+#content .modal-body div label {
+    max-width: 150px;
+}
+#content .modal-content{
+    padding:  10px 15px 10px;
+}
+#content .modal-content .close{
+    color: #df2020;
+    outline: none;
+    font-size: 27px;
+}
+#content .modal-body input,
+#content .modal-body select
+{
+    font-size: 14px;
+}
+#content .modal-body select
+{
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
+    -webkit-appearance: none;
+    background-size:
+    9px 9px,
+    9px 9px;
+    background-position-x:  calc(100% - 10px);
+}
+#content .modal-footer .btn{
+    font-size: 14px;
+}
+#content .modal-footer .btn-link{
+    box-shadow: none;
+}
+#content .edit-peserta .modal-body{
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+}
+#content .edit-peserta .modal-body .row-1{
+    width: 50%;
+}
+#content .edit-peserta .modal-body .row-2{
+    width: 50%;
+}
+#content .edit-detail .modal-body .row{
+    margin-bottom: 15px;
+}
+#content .edit-detail .modal-body .row-1{
+    padding: 0 25px;
+}
+#content .edit-detail .modal-body .row-2{
+    padding: 0 25px;
+}
+#content .modal-body .nama-tugas{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+#content .modal-body .col-sm-8,
+#content .modal-body .col-sm-5{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+#content .modal-body .col-sm-6{
+    margin: auto;
+    text-align: center;
+}
+#content .modal-body .nama-peserta{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+#content .edit-peserta .hijau{
+    color: #44AB72;
+}
+#content .edit-peserta .merah{
+    color: #df2020;
+}
+#content .onerow{
+    margin-bottom: 35px;
+}
+
+/* semester_aktif */
+#content .semester-aktif{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+#content .tanda-aktif{
+    border: 2px solid rgb(31, 132, 192) !important;
+}
+
+#content .menu-skema{
+    width: 97%;
+    margin: auto;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(31, 132, 192);
+}
+#content .menu-skema li>a{
+    opacity: 0.5;
+    font-size: 14px;
+}
+#content .menu-skema li>a:hover{
+    opacity: 1;
+    border-color: transparent;
+    border-bottom: none;
+}
+#content .menu-skema .active{
+    background-color: transparent;
+    border-bottom: none;
+    border: 1px solid rgb(31, 132, 192);
+    opacity: 1;
+}
+#content .menu-skema .active:hover{
+    background-color: transparent;
+    border-bottom: none;
+    border: 1px solid rgb(31, 132, 192);
+    opacity: 1;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 1600px) {
+    #content .dataTables_filter{
+        margin-left: 17px;
+    }
+    #content .cards .dataTables_paginate {
+        margin-right: 13px !important;
+    }
+}
+
+@media (max-width: 1366px) {
+    #content .page-content>div.row .menu-semester{
+        width: 9%;
+    }
+    #content .page-content>div.row .cards{
+        width: 91%;
+    }
+    #content .dataTables_filter{
+        margin-left: 13px;
+    }
+    #content .cards .dataTables_paginate {
+        margin-right: 9px !important;
+    }
+    #content .table th {
+        padding: 10px 0;
+    }
+    #content .table .no {
+        width: 5% !important;
+    }
+    #content .table .npm {
+        width: 15% !important;
+    }
+    #content .table .nama {
+        width: 30% !important;
+    }
+    #content .table .tugas-pertemuan {
+        width: 40% !important;
+    }
+    #content .table .aksi {
+        width: 8% !important;
+    }
+    #content .modal-lg {
+        max-width: 40%;
+        margin: auto;
+    }
+    #detail-tugas .row>div{
+        width: 20%;
+    }
+}
+
+@media (max-width: 1000px) {
+    #sidebar {
+        position: fixed;
+        z-index: 9999;
+    }
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    #content {
+        width: 100%;
+        padding: 0px;
+        min-height: 100vh;
+        transition: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #content .page-content {
+        padding: 0px 10px 10px 10px;
+    }
+    #content .container-fluid {
+        margin-top: -7px;
+        padding: 0 5px 0px 7px;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 9998;
+        opacity: 0;
+        /* animate the transition */
+        transition: all 0.5s ease-in-out;
+    }
+    #content .nav-angkatan {
+        justify-content: center;
+        margin-top: -20px;    
+        border: none;
+    }
+    #content .nav-angkatan>a {
+        height: 45px;
+        padding: 30px 30px 30px 30px;
+    }
+    #nav-header{
+        margin-left: 50px;
+    }
+    #tab-semester {
+        width: 100%;
+        border:none;
+        margin-right: 0px;
+    }
+    #tab-semester a{
+        text-align: center;
+    }
+    #tab-semester a.active{
+        text-decoration: none
+    }
+    #content .page-content>div.row .menu-semester{
+        width: 20%;
+    }
+    #content .page-content>div.row .cards{
+        width: 80%;
+    }
+    #content .table {
+        width: 85%;
+    }
+    #content .card-control {
+        width: 85%;
+    }
+    #content #search1{
+        max-width: 60%;
+    }
+    #content .modal-lg {
+        max-width: 90%;
+        margin: auto;
+    }
+    #content .card nav {
+        width: 90%;
+        margin: auto;
+    }
+    #content .dataTables_filter{
+        margin-left: 10px;
+    }
+    #detail-tugas .panel-heading{
+        align-items: center;
+        text-align: left;
+        margin: auto;
+        padding: 10px;
+    }
+    #detail-tugas .row>div{
+        width: 50%;
+    }
+}

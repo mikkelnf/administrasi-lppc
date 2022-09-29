@@ -1,0 +1,1204 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap";
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.collapsing {
+    transition-duration: 0.45s;
+} 
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+#sidebar {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    color: rgb(32, 32, 32);
+    transition: all 0.3s;
+    user-select: none;
+}
+#sidebar.active {
+    margin-left: -275px;
+}
+
+/* sidebar-head */
+#sidebar .sidebar-heading {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+#sidebar .hr-logo{
+    width: 275px;
+    border-width: 1px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+/* sidebar-menu */
+#sidebar .sidebarmenu{
+    position: relative;
+    font-size: 14px;
+    font-weight: 510;
+}
+#sidebar .activemenu, 
+#sidebar .inactivemenu:hover{
+    color: black;
+    opacity: 0.9;
+}
+#sidebar .inactivemenu{
+    color: black;
+    opacity: 0.5;
+}
+#sidebar ul.components {
+    padding: 10px 0px;
+}
+#sidebar div ul.nav{
+    padding-right: 50px;
+}
+.panel-heading{
+    padding-top: 16px;
+    padding-right: 8px;
+    height: 100%;
+}
+.panel-heading>a{
+    display:block;
+    color:rgb(167, 167, 167);
+    font-size:14px;
+    border-left: 4px solid transparent;
+    padding: 7px;
+    z-index: -1;
+}
+.panel-heading>a.activemenu{
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    border-left-color: rgb(31, 132, 192);
+}
+.panel-heading>a.inactivemenu:hover{
+    border-left-color: rgba(31, 133, 192, 0.6);
+}
+
+/* sidebar-iconmenu */
+#sidebar .iconmenu{
+    width: 21px; 
+    height: 21px;
+    margin-right: 13px;
+    margin-left: 7px;
+    position: relative;
+    bottom: 1px;
+    opacity: 0.9;
+}
+.panel-heading .arrowicon {
+    float: right;
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+.panel-heading.active .arrowicon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* sidebar-submenu */
+#sidebar ul li a {
+    padding: 14px;
+
+}
+#sidebar div ul a {
+    font-size: 0.9em !important;
+    padding-left: 20px !important;
+    display: block;
+    height: 45px;
+}
+#sidebar .nav.submenubg{
+    background-color: rgb(230, 230, 230);
+    width: 87%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: solid rgb(199, 199, 199);
+    border-width: 1px;
+}
+#sidebar .panel-body ul li a.active{
+    opacity: 0.9;
+}
+#sidebar div ul a {
+    background-color: transparent;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+#sidebar div ul a.active,
+#sidebar div ul a:hover {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 275px);
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+#content.active {
+    width: 100%;
+}
+#content .container-fluid {
+    padding: 0 20px 0px 21px;
+}
+
+#content .content-header{
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+#content .page-divider{
+    border-width: 2px;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#content .page-content span.material-icons-outlined,
+#content .page-content span.material-icons-round,
+#content .page-content span.material-icons
+{
+    user-select: none;
+}
+
+#content .alert-warning .warning{
+    font-size: 13px;
+}
+
+#content .kursus-aktif{
+    width: 50%;
+    margin: auto;
+}
+#content .kursus-aktif input{
+    text-align: center;
+    font-size: 14px;
+}
+#content .kursus-aktif button{
+    margin-left: auto;
+    display: flex;
+    text-align: end;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: rgb(31, 132, 192);
+    padding-right: 0px;
+    box-shadow: none;
+}
+
+#content .daftar-administrator{
+    width: 60%;
+    margin: auto;
+}
+#content .delete-success{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .daftar-administrator>button{
+    margin-left: auto;
+    display: flex;
+    box-shadow: none;
+    width: 35px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#content .daftar-angkatan{
+    width: 60%;
+    margin: auto;
+}
+#content .daftar-angkatan>button{
+    margin-left: auto;
+    display: flex;
+    box-shadow: none;
+    width: 35px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+#content .daftar-semester{
+    width: 50%;
+    margin: auto;
+}
+#content .daftar-semester>button{
+    margin-left: auto;
+    display: flex;
+    box-shadow: none;
+    width: 35px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+
+
+
+#content .list-group .add{
+    margin: auto;
+    font-size: 21px;
+}
+
+#content .list-content{
+    padding: 0 10px ;
+    font-size: 14px;
+}
+#content .list-content>div{
+    margin-top: auto;
+    margin-bottom: auto;
+    color: rgb(90, 90, 90);
+}
+#content .list-content>a.btn{
+    justify-content: center;
+    padding-top: 2px;
+    padding-bottom: 0px;
+}
+#content .list-content>.btn{
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+}
+#content .list-content .button{
+    width: 21%;
+    display: flex;
+    justify-content: end;
+}
+#content .daftar-angkatan .list-content .btn{
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+#content .daftar-semester .list-content .btn{
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+
+#content .list-content .profile-icon{
+    width: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#content .list-content .profile-icon .material-icons{
+    color: #000;
+    opacity: 0.4;
+    font-size: 30px;
+}
+#content .list-content .profile-icon>span{
+    vertical-align: middle;
+}
+#content .list-content .nama{
+    width: 30%;
+    padding-left: 20px;
+}
+
+#content .list-content .nama-semester{
+    width: 37%;
+    padding-left: 20px;
+}
+
+
+#content .list-content .status-user{
+    width: 25%;
+}
+#content .list-content .role{
+    width: 20%;
+}
+#content .list-content .status{
+    width: 37%;
+}
+#content .list-content .status>a.aktif{
+    color: #44AB72;
+}
+#content .list-content .status>a.tidak-aktif{
+    color: #DC354F;
+}
+#content .list-group-item.list-button{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+#content .list-group-item.list-button>a{
+    opacity: 0.9;
+}
+#content .list-group-item .arrowicon {
+    margin-left: 5px;
+}
+#content .list-group-item.aktif .arrowicon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#content .arrowicon {
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+#content .list-group-item .empty{
+    font-size: 14px;
+    opacity: 0.9;
+}
+#content .list-group-item.hide{
+    display: none;
+}
+#content .semester-icon{
+    color: #000;
+    opacity: 0.4;
+    font-size: 30px;
+    padding-right: 4px;
+}
+
+#content .warning-icon{
+    margin-bottom: 8px;
+}
+#content .alert{
+    padding: 10px 0;
+}
+#content .info-icon{
+    opacity: 0.5;
+    padding-right: 10px;
+    margin-top: -1px;
+    font-size: 22px;
+}
+#content .info-text{
+    font-size: 13px;
+    opacity: 0.7;
+}
+#content .warning-info{
+    height: 15px;
+    margin-top: -8px;
+}
+#content .angkatan-icon{
+    width: 5%;
+    color: #000;
+    opacity: 0.4;
+    font-size: 30px;
+    padding-right: 4px;
+}
+
+#content .daftar-administrator .list-content .btn{
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+#content .daftar-administrator .list-content .nama{
+    width: 34% !important;
+    padding-left: 20px;
+}
+#content .daftar-administrator .list-content .status-user{
+    width: 20%;
+}
+#content .daftar-administrator .list-content .role{
+    width: 23%;
+}
+#content .daftar-administrator .list-content .button{
+    width: 17.5%;
+}
+
+#content .list-content .nama-angkatan{
+    width: 27.2%;
+    padding-left: 20px;
+}
+#content #daftar-angkatan .list-content .status{
+    width: 25%;
+}
+#content #daftar-angkatan .list-content .semester-aktif{
+    width: 25%;
+}
+#content #daftar-angkatan .list-content .button{
+    width: 17.5%;
+}
+
+#content .daftar-skema{
+    width: 50%;
+    margin: auto;
+}
+#content .skema-icon{
+    color: #000;
+    opacity: 0.4;
+    font-size: 30px;
+    padding-right: 4px;
+}
+#content .daftar-skema>button{
+    margin-left: auto;
+    display: flex;
+    box-shadow: none;
+    width: 35px;
+    padding: 5px;
+    margin-bottom: 15px;
+}
+#content .list-content .nama-skema{
+    width: 74%;
+    padding-left: 20px;
+}
+#content #daftar-skema .list-content .button{
+    width: 21%;
+}
+#content .daftar-skema .list-content .btn{
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+
+
+/* topnavbar */
+#content .navbar-custom {
+    background: rgb(77,97,140);
+    background: linear-gradient(180deg, rgba(77,97,140,1) 0%, rgba(50,118,172,1) 50%, rgb(31, 132, 192) 100%);
+    height: 70px;
+    user-select: none;
+}
+#nav-header{
+    font-size: 16px;
+    color: rgb(235, 235, 235);
+    display: block;
+    position: absolute;
+    margin-left: 55px;
+}
+#nav-header.show {
+    display: block;
+}
+#content .page-content {
+    padding: 0px 35px 35px 35px;
+}
+#content .toggleicon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* user-menu */
+#content .dropdown.hide{
+    display: none;
+}
+#content .dropdown-menu {
+    background-color: #fafafa;
+}
+#content .dropdown-menu a {
+    font-size: 13.4px;
+    font-weight: 510;
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    padding: 8px;
+}
+#content .dropdown-menu a:hover {
+    opacity: 0.8;
+}
+#content .dropdown-menu a:focus {
+    background-color: transparent;
+}
+#content .dropdown-menu .dropdown-divider {
+    border-color: rgb(204, 204, 204);
+}
+#content .dropdown-menu a>span.material-icons-outlined {
+    font-size: 18px;
+    margin-right: 18px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#content .vertical-line{
+    border-left: 1px solid rgb(209, 209, 209);
+    margin-left: 18px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+#content .username.hide{
+    display: none;
+}
+#content .username{
+    color: rgb(235, 235, 235);
+    font-size: 14.5px;
+    font-weight: 510;
+    margin-left: auto;
+}
+#content .img-custom{
+    margin-right: -13px;
+}
+
+/* card */
+#content .card {
+    background-color: rgb(230, 230, 230);
+    flex: 1;
+}
+
+/* table */
+#content .table {
+    font-size: 14px;
+    color: rgb(88, 88, 88);
+    width: 90%;
+    margin:auto;
+    margin-bottom: 20px;
+    table-layout: fixed;
+}
+#content .table tr th, #content .table tr td {
+    border-color: rgb(209, 209, 209);
+    text-align: center;
+}
+#content .table td {
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* table-control */
+#content .table-control{
+    opacity: 0.5;
+    float: right;
+    margin-right: 40px;
+}
+#content .btn-ctrl{
+    height: 35px;
+    width: 55px;
+    margin-right: 15px;
+    margin-top: -58px;
+    outline: none;
+    background-color: transparent;
+}
+#content .btn-tambah{
+    opacity: 0.7;
+    outline: black;
+}
+#content .ip{
+    font-size: 27px;
+    margin: -2px 0 0;
+}
+#content .ip2{
+    font-size: 23px;
+    vertical-align:top;
+}
+
+/* modal */
+#content .modal-title{
+    font-size: 16px;
+    color: rgb(31, 132, 192);
+}
+#content .title-delete{
+    color: #df2020;
+}
+#content .modal-body{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+}
+#content .modal-body .form-group{
+    padding: 0 50px;
+}
+#content .modal-body .form-group .role{
+    text-align: center;
+}
+#content .modal-body-1{
+    margin: auto;
+    width: 70%;
+}
+#content .modal-body-1 div>label{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+#content .modal-body-2{
+    margin: auto;
+}
+#content .modal-body-2 div>label{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+#content .modal-body-2 div>input{
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 50%;
+}
+#content .modal-body-1 .form-group{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#content .modal-body-2 .form-group{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#content .modal-body-2 .form-group2{
+    padding: 0 150px;
+}
+#content .modal-lg {
+    max-width: 30%;
+}
+#content .modal-content{
+    padding:  10px 15px 10px;
+}
+#content .modal-content .close{
+    color: #df2020;
+    outline: none;
+    font-size: 27px;
+}
+#content .modal-body input,
+#content .modal-body select
+{
+    font-size: 14px;
+}
+#content .modal-body select
+{
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
+    -webkit-appearance: none;
+    background-size:
+    9px 9px,
+    9px 9px;
+    background-position-x:  calc(100% - 10px);
+}
+#content .modal-footer .btn{
+    font-size: 14px;
+}
+#content .modal-footer .btn-link{
+    box-shadow: none;
+}
+#content .modal-body .success-text{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .modal-body .error-text{
+    font-size: 13px;
+}
+
+#content .hijau{
+    color: #44AB72;
+}
+#content .merah{
+    color: #df2020;
+}
+
+#content .daftar-administrator .modal-body select {
+    width: 50% !important;
+    margin: auto;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 1600px){
+    #content .daftar-administrator{
+        width: 70%;
+        margin: auto;
+    }
+    #content .daftar-angkatan{
+        width: 70%;
+        margin: auto;
+    }
+    #content .daftar-semester{
+        width: 55%;
+        margin: auto;
+    }
+    #content .daftar-skema{
+        width: 55%;
+        margin: auto;
+    }
+    #content .daftar-semester .list-content .nama-semester{
+        width: 35%;
+        padding-left: 12px;
+    }
+    #content .daftar-semester .list-content .status{
+        width: 34%;
+    }
+    #content .daftar-semester .list-content .button{
+        width: 24% !important;
+    }
+    #content .daftar-skema .list-content .nama-skema{
+        width: 70.5%;
+        padding-left: 12px;
+    }
+    #content .daftar-skema .list-content .button{
+        width: 24% !important;
+    }
+    #content .modal-lg {
+        max-width: 35%;
+        margin: auto;
+    }
+    #content .semester-icon{
+        width: 7% !important;
+    }
+    #content .daftar-administrator .list-content .nama{
+        width: 33% !important;
+    }
+    #content .daftar-administrator .list-content .status{
+        width: 20% !important;
+    }
+    #content .daftar-administrator .list-content .button{
+        width: 19% !important;
+    }
+    #content .angkatan-icon{
+        width: 5% !important;
+    }
+    #content .list-content .nama-angkatan{
+        width: 30% !important;
+    }
+    #content #daftar-angkatan .list-content .status{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .semester-aktif{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .button{
+        width: 19%;
+    }
+    #content .modal-body select, 
+    #content .modal-body input {
+        width: 100% !important;
+        margin: auto;
+    }
+    #content .daftar-administrator .modal-body input{
+        width: 60% !important;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1366px){
+    #content .daftar-administrator{
+        width: 82%;
+        margin: auto;
+    }
+    #content .daftar-angkatan{
+        width: 82%;
+        margin: auto;
+    }
+    #content .daftar-semester{
+        width: 65%;
+        margin: auto;
+    }
+    #content .daftar-semester .list-content .nama-semester{
+        width: 35%;
+        padding-left: 12px;
+    }
+    #content .daftar-semester .list-content .status{
+        width: 34%;
+    }
+    #content .daftar-semester .list-content .button{
+        width: 24% !important;
+    }
+    #content .modal-lg {
+        max-width: 35%;
+        margin: auto;
+    }
+    #content .semester-icon{
+        width: 7% !important;
+    }
+    #content .daftar-administrator .list-content .nama{
+        width: 33% !important;
+    }
+    #content .daftar-administrator .list-content .status{
+        width: 20% !important;
+    }
+    #content .daftar-administrator .list-content .button{
+        width: 19% !important;
+    }
+    #content .angkatan-icon{
+        width: 5% !important;
+    }
+    #content .list-content .nama-angkatan{
+        width: 30% !important;
+    }
+    #content #daftar-angkatan .list-content .status{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .semester-aktif{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .button{
+        width: 19%;
+    }
+    #content .modal-body #nama_semester,
+    #content .modal-body #nama_semesterperiode{
+        width: 100% !important;
+        margin: auto;
+    }
+    #content .modal-body select{
+        width: 100% !important;
+        margin: auto;
+    }
+    #content .daftar-skema{
+        width: 65%;
+        margin: auto;
+    }
+    #content .daftar-skema .list-content .nama-skema{
+        width: 70.2%;
+        padding-left: 12px;
+    }
+    #content .daftar-skema .list-content .button{
+        width: 24% !important;
+    }
+}
+
+@media (max-width: 1280px){
+    #content .daftar-administrator{
+        width: 85%;
+        margin: auto;
+    }
+    #content .daftar-angkatan{
+        width: 85%;
+        margin: auto;
+    }
+    #content .daftar-semester{
+        width: 69%;
+        margin: auto;
+    }
+    #content .daftar-semester .list-content .nama-semester{
+        width: 35%;
+        padding-left: 12px;
+    }
+    #content .daftar-semester .list-content .status{
+        width: 34%;
+    }
+    #content .daftar-semester .list-content .button{
+        width: 24% !important;
+    }
+    #content .modal-lg {
+        max-width: 35%;
+        margin: auto;
+    }
+    #content .semester-icon{
+        width: 7% !important;
+    }
+    #content .daftar-administrator .list-content .nama{
+        width: 33% !important;
+    }
+    #content .daftar-administrator .list-content .status{
+        width: 20% !important;
+    }
+    #content .daftar-administrator .list-content .button{
+        width: 19% !important;
+    }
+    #content .angkatan-icon{
+        width: 5% !important;
+    }
+    #content .list-content .nama-angkatan{
+        width: 30% !important;
+    }
+    #content #daftar-angkatan .list-content .status{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .semester-aktif{
+        width: 23%;
+    }
+    #content #daftar-angkatan .list-content .button{
+        width: 19%;
+    }
+    #edit-kursus .modal-body{
+        width: 100% !important;
+    }
+    #content .daftar-skema{
+        width: 69%;
+        margin: auto;
+    }
+    #content .daftar-skema .list-content .nama-skema{
+        width: 69.9%;
+        padding-left: 12px;
+    }
+    #content .daftar-skema .list-content .button{
+        width: 24% !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    #sidebar {
+        position: fixed;
+        z-index: 9999;
+    }
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    #content {
+        width: 100%;
+        padding: 0px;
+        min-height: 100vh;
+        transition: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #content .page-content {
+        padding: 0px 10px 20px 10px;
+    }
+    #content .container-fluid {
+        margin-top: -7px;
+        padding: 0 5px 0px 7px;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 9998;
+        opacity: 0;
+        /* animate the transition */
+        transition: all 0.5s ease-in-out;
+    }
+    #content .nav-angkatan {
+        justify-content: center;
+        margin-top: -20px;    
+        border: none;
+    }
+    #content .nav-angkatan>a {
+        height: 45px;
+        padding: 30px 30px 30px 30px;
+    }
+    #nav-header{
+        margin-left: 50px;
+    }
+    #content .modal-lg {
+        max-width: 90%;
+        margin: auto;
+    }
+    #content .kursus-aktif{
+        width: 80%;
+        margin: auto;
+    }
+    #content .modal-body-1{
+        margin: auto;
+        width: 100%;
+    }
+    #content .modal-body-2 div>input{
+        width: 80%;
+    }
+    #content .page-divider{
+        width: 100%;
+    }
+    #content .daftar-administrator{
+        width: 100%;
+    }
+    #content .daftar-angkatan{
+        width: 100%;
+    }
+    #content .daftar-semester{
+        width: 100%;
+    }
+    #content .daftar-skema{
+        width: 100%;
+    }
+    #content .list-content .status{
+        width: 50% !important;
+    }
+    #content .list-content .status-user{
+        width: 50% !important;
+    }
+    #content .list-group-item{
+        padding: 15px 20px 20px 20px;
+    }
+    #content .list-group-item .list-content{
+        display: block;
+    }
+    #content .list-group-item .list-content>div{
+        padding: 0 0 0.9rem;
+    }
+    #content .list-group-item .list-content>.btn{
+        display: flex;
+        margin-top: -45px;
+    }
+    #content .list-content .profile-icon{
+        margin-left: -2px;
+    }
+    #content .list-content .angkatan-icon{
+        margin-bottom: 12px;
+    }
+    #content .daftar-angkatan .list-group-item{
+        padding: 15px 20px 10px 20px;
+    }
+    #content .daftar-angkatan .list-group-item .list-content{
+        display: block;
+    }
+    #content .daftar-angkatan .list-group-item .list-content>div{
+        padding: 0px 0 0.9rem;
+    }
+    #content .daftar-angkatan .list-group-item .list-content .button{
+        display: block;
+        text-align: end;
+        justify-content: end;
+        margin-left: auto;
+        margin-top: -90px;
+    }
+    #content .daftar-angkatan .list-group-item .list-content .btn{
+        text-align: center;
+        display: flex;
+        margin-top: 10px;
+        padding: auto;
+        justify-content: center;
+    }
+
+    #content .list-content .semester-icon{
+        margin-bottom: 12px;
+    }
+    #content .daftar-semester .list-group-item{
+        padding: 15px 20px 10px 20px;
+    }
+    #content .daftar-administrator .list-group-item .list-content{
+        display: block;
+    }
+    #content .daftar-semester .list-group-item .list-content{
+        display: block;
+    }
+    #content .daftar-semester .list-group-item .list-content>div{
+        padding: 0px 0 0.9rem;
+    }
+    #content .daftar-semester .list-group-item .list-content .button{
+        display: block;
+        text-align: end;
+        justify-content: end;
+        margin-left: auto;
+        margin-top: -90px;
+    }
+    #content .daftar-semester .list-group-item .list-content .btn{
+        text-align: center;
+        display: flex;
+        margin-top: 10px;
+        padding: auto;
+        justify-content: center;
+    }
+    #content .daftar-angkatan .list-content .status{
+        width: 37%;
+    }
+    #content .daftar-semester .list-content .status{
+        width: 37%;
+    }
+    #content .list-content .role{
+        width: 70% !important;
+    }
+    #content .daftar-administrator .list-group-item .list-content>div{
+        padding: 0px 0 0.9rem;
+    }
+    #content .daftar-administrator .list-group-item .list-content .button{
+        display: block;
+        text-align: end;
+        justify-content: end;
+        margin-left: auto;
+        margin-top: -90px;
+    }
+    #content .daftar-administrator .list-group-item .list-content .btn{
+        text-align: center;
+        display: flex;
+        margin-top: 10px;
+        padding: auto;
+        justify-content: center;
+    }
+    #content .modal-body select, 
+    #content .modal-body input {
+        width: 100% !important;
+    }
+    #content .list-content .skema-icon{
+        margin-bottom: 12px;
+    }
+    #content .daftar-skema .list-group-item .list-content{
+        display: block;
+    }
+    #content .daftar-skema .list-group-item .list-content>div{
+        padding: 0px 0 0.9rem;
+    }
+    #content .daftar-skema .list-group-item .list-content .button{
+        display: block;
+        text-align: end;
+        justify-content: end;
+        margin-left: auto;
+        margin-top: -90px;
+    }
+    #content .daftar-skema .list-group-item .list-content .btn{
+        text-align: center;
+        display: flex;
+        margin-top: 10px;
+        padding: auto;
+        justify-content: center;
+    }
+}

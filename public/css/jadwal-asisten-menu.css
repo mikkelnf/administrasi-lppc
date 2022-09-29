@@ -1,0 +1,1035 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap";
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.collapsing {
+    transition-duration: 0.45s;
+} 
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+#sidebar {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    color: rgb(32, 32, 32);
+    transition: all 0.3s;
+}
+#sidebar.active {
+    margin-left: -275px;
+}
+
+/* sidebar-head */
+#sidebar .sidebar-heading {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+#sidebar .hr-logo{
+    width: 275px;
+    border-width: 1px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+/* sidebar-menu */
+#sidebar .sidebarmenu{
+    position: relative;
+    font-size: 14px;
+    font-weight: 510;
+}
+#sidebar .activemenu, 
+#sidebar .inactivemenu:hover{
+    color: black;
+    opacity: 0.9;
+}
+#sidebar .inactivemenu{
+    color: black;
+    opacity: 0.5;
+}
+#sidebar ul.components {
+    padding: 10px 0px;
+}
+#sidebar div ul.nav{
+    padding-right: 50px;
+}
+.panel-heading{
+    padding-top: 16px;
+    padding-right: 8px;
+    height: 100%;
+}
+.panel-heading>a{
+    display:block;
+    color:rgb(167, 167, 167);
+    font-size:14px;
+    border-left: 4px solid transparent;
+    padding: 7px;
+    z-index: -1;
+}
+.panel-heading>a.activemenu{
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    border-left-color: rgb(31, 132, 192);
+}
+.panel-heading>a.inactivemenu:hover{
+    border-left-color: rgba(31, 133, 192, 0.6);
+}
+
+/* sidebar-iconmenu */
+#sidebar .iconmenu{
+    width: 21px; 
+    height: 21px;
+    margin-right: 13px;
+    margin-left: 7px;
+    position: relative;
+    bottom: 1px;
+    opacity: 0.9;
+}
+.panel-heading .arrowicon {
+    float: right;
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+.panel-heading.active .arrowicon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* sidebar-submenu */
+#sidebar ul li a {
+    padding: 14px;
+
+}
+#sidebar div ul a {
+    font-size: 0.9em !important;
+    padding-left: 20px !important;
+    display: block;
+    height: 45px;
+}
+#sidebar .nav.submenubg{
+    background-color: rgb(230, 230, 230);
+    width: 87%;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: solid rgb(199, 199, 199);
+    border-width: 1px;
+}
+#sidebar .panel-body ul li a.active{
+    opacity: 0.9;
+}
+#sidebar div ul a {
+    background-color: transparent;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+#sidebar div ul a.active,
+#sidebar div ul a:hover {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 275px);
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+#content.active {
+    width: 100%;
+}
+#content .container-fluid {
+    padding: 0 20px 0px 21px;
+}
+#content .page-content>div.row{
+    margin: auto;
+}
+#content .page-content>div.row .menu-pertemuan{
+    width: 7%;
+    border-right: 1px solid rgb(204, 204, 204);
+}
+#content .page-content>div.row .cards{
+    width: 93%;
+    background-color: rgb(230, 230, 230);
+    padding: 30px;
+}
+#content .page-content>div.row .cards .jadwal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#content .jadwal-kosong{
+    margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    padding: 100px 0;
+    height: 50%;
+}
+#content .edit-success{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .add-success{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .card>.status{
+    text-align: center;
+    height: 50%;
+    padding: 30px 25px;
+}
+#content .card>.status>a{
+    font-size: 14px;
+}
+#content .delete-success{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .alert-warning{
+    margin-bottom: 30px;
+}
+#content .warning-icon{
+    margin-bottom: 8px;
+}
+#content .warning-info{
+    height: 15px;
+    margin-top: -8px;
+}
+#content .info-text{
+    font-size: 13px;
+    opacity: 0.7;
+}
+#content .alert{
+    padding: 10px 0;
+}
+#content .info-icon{
+    opacity: 0.5;
+    padding-right: 10px;
+    margin-top: -1px;
+    font-size: 22px;
+}
+#content .btn-pdf{
+    font-size: 13px;
+}
+
+/* topnavbar */
+#content .navbar-custom {
+    background: rgb(77,97,140);
+    background: linear-gradient(180deg, rgba(77,97,140,1) 0%, rgba(50,118,172,1) 50%, rgb(31, 132, 192) 100%);
+    height: 70px;
+}
+#nav-header{
+    font-size: 16px;
+    color: rgb(235, 235, 235);
+    display: block;
+    position: absolute;
+    margin-left: 55px;
+}
+#nav-header.show {
+    display: block;
+}
+#content .page-content {
+    padding: 0px 17px 35px 17px;
+}
+#content .toggleicon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* user-menu */
+#content .dropdown.hide{
+    display: none;
+}
+#content .dropdown-menu {
+    background-color: #fafafa;
+}
+#content .dropdown-menu a {
+    font-size: 13.4px;
+    font-weight: 510;
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    padding: 8px;
+}
+#content .dropdown-menu a:hover {
+    opacity: 0.8;
+}
+#content .dropdown-menu a:focus {
+    background-color: transparent;
+}
+#content .dropdown-menu .dropdown-divider {
+    border-color: rgb(204, 204, 204);
+}
+#content .dropdown-menu a>span.material-icons-outlined {
+    font-size: 18px;
+    margin-right: 18px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#content .vertical-line{
+    border-left: 1px solid rgb(209, 209, 209);
+    margin-left: 18px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+#content .username.hide{
+    display: none;
+}
+#content .username{
+    color: rgb(235, 235, 235);
+    font-size: 14.5px;
+    font-weight: 510;
+    margin-left: auto;
+}
+#content .img-custom{
+    margin-right: -13px;
+}
+
+/* menu angkatan */
+#content .nav-angkatan {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    font-size: 14px;
+    font-weight: 510;
+    margin-bottom: 40px;
+    margin-top: -2px;
+}
+#content .nav-angkatan>a {
+    height: 37px;
+    opacity: 0.5;
+    text-align: center;
+    padding: 0 30px 0 30px;
+}
+#content .nav-angkatan a:hover {
+    opacity: 0.9;
+    border-bottom: 3px solid rgba(31, 133, 192, 0.3);
+    transition: all 0.2s;
+}
+#content .nav-angkatan .active,
+#content .nav-angkatan .active:hover{
+    border-bottom: 3px solid rgb(31, 132, 192);
+    opacity: 0.9;
+    transition: none;
+}
+#content #nav-angkatan .nav-item.active{
+    background-color: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.flex-parent {
+    display: flex;
+
+}
+
+/* menu-pertemuan */
+#content .menu-pertemuan .list-group-head{
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 15px 0;
+}
+#content .menu-pertemuan .list-group-item{
+    border: none;
+    border-right: 4px solid transparent;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    background-color: transparent;
+    text-align: center;
+}
+#content .list-group-item.active,
+#content .list-group-item.active:hover{
+    border: none;
+    border-right: 4px solid rgb(31, 132, 192);
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.9);
+}
+#content .list-group-item:hover{
+    border-right: 4px solid rgba(31, 133, 192, 0.5);
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* card */
+#content #modaltambahjadwal .card {
+    background-color: rgb(230, 230, 230);
+}
+#content .modaleditjadwal .card {
+    background-color: rgb(230, 230, 230);
+}
+#content .card-status {
+    background-color: rgb(230, 230, 230);
+}
+#content .card-jadwal {
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+#content .card-jadwal:hover {
+    border-color: rgb(31, 132, 192);
+    background-color: rgb(240, 240, 240);
+}
+#content .card-jadwal .card-title {
+    font-size: 14px;
+    color: #000;
+    opacity: 0.85;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#content .card-jadwal hr {
+    border-color: rgb(204, 204, 204);
+}
+#content .card-jadwal .btn-edit {
+    font-size: 13px;
+    height: 30px;
+    padding-top: 4px;
+    padding-bottom: 0px;
+}
+#content .card-jadwal .btn-hapus {
+    font-size: 13px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 65px;
+    height: 25px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+}
+#content .card-jadwal p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+#content .card-jadwal .detail {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    align-items: center;
+}
+#content .card-jadwal .detail>.btn-link {
+    margin-top: -5px;
+    color: #df2020;
+    margin-right: 10px;
+    box-shadow: none;
+}
+#content .card-jadwal .title {
+    align-items: center;
+    justify-content: space-between;
+}
+
+#content .card-jadwal .bbb {
+    font-size: 13px;
+    color: rgb(158, 158, 158);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+#content .card-jadwal .abc {
+    margin-right: auto;
+}
+#content .card-jadwal .aa {
+    width: 85%;
+    margin-right: auto;
+}
+
+#content .card-jadwal .ss {
+    display: block;
+}
+
+/* table */
+th.col-1{
+    width:10% !important;
+}
+th.col-2{
+    width:10% !important;
+}
+th.col-3{
+    width:20% !important;
+}
+th.col-4{
+    width:20% !important;
+}
+th.col-5{
+    width:20% !important;
+}
+th.col-6{
+    width:25% !important;
+}
+.page-item.active .page-link {
+    background-color: lightgrey !important;
+    border: 1px solid black;
+}
+.page-item.active .page-link:hover {
+    background-color: lightgrey !important;
+    border: 1px solid black;
+}
+.page-link {
+    color: black !important;
+}
+#content .table {
+    font-size: 14px !important;
+    color: rgb(88, 88, 88) !important;
+    width: 95% !important;
+    margin:auto !important;
+    margin-bottom: 20px !important;
+    table-layout: fixed !important;
+    margin-top: 20px !important;
+    border-bottom: none !important;
+}
+#content .pilih-jadwal tbody tr {
+    background-color: transparent !important;
+}
+#content .table tr th, #content .table tr td {
+    border-color: rgb(209, 209, 209);
+    text-align: center;
+}
+#content .table td {
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+}
+#content .pilih-jadwal tbody tr:hover {
+    background-color: rgb(218, 218, 218) !important;
+}
+#content .pilih-jadwal tbody tr.selected {
+    background-color: rgb(209, 209, 209) !important;
+}
+#content .table td.action div{
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+}
+#content .table td.hadir{
+    color: #44AB72;
+    background-color: #44ab7242;
+}
+#content .table td.absen{
+    color: #DF2063;
+    background-color: #df206348;
+}
+#content .table-ta {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.705);
+    font-weight: 800;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgb(204, 204, 204);
+    margin-top: 30px;
+    margin-bottom: -20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+#content .table-ta>div {
+    padding: 15px 25px 15px 0;
+}
+#content .table-ta>div>a {
+    padding: 0 25px 0 0;
+}
+
+/* datatables */
+#content .table td.dataTables_empty{
+    line-height: 50px;
+}
+#content .dataTables_paginate {
+    width: 95% !important;
+    margin: auto !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+}
+#content .dataTables_paginate .paginate_button {
+    padding: 0px !important;
+}
+#content .dataTables_paginate .paginate_button>a{
+    color: rgb(122, 122, 122);
+    background-color: transparent !important;
+    border: 1px solid rgb(185, 185, 185);
+    box-shadow: none !important;
+    margin-left: -5px !important;
+    padding: 7px 10px !important;
+}
+#content .dataTables_paginate .paginate_button{
+    color: rgb(122, 122, 122);
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+#content .dataTables_paginate .paginate_button>a:hover{
+    background-color: rgba(31, 133, 192, 0.425) !important;
+    border-color: rgba(31, 133, 192, 0.425) !important;
+    color: #fafafa !important;
+}
+#content .dataTables_paginate .paginate_button.active>a{
+    background-color: rgb(31, 132, 192) !important;
+    border-color: rgb(31, 132, 192) !important;
+    color: #fafafa !important;
+}
+#content .dataTables_paginate .paginate_button.disabled>span{
+    border: 1px solid rgb(185, 185, 185);
+    background-color: transparent;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid transparent!important;
+    background-color: transparent!important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, transparent))!important;
+    background: -webkit-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -moz-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -ms-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: -o-linear-gradient(top, transparent 0%, transparent 100%)!important;
+    background: linear-gradient(to bottom, transparent 0%, transparent 100%)!important;
+}
+#content .dataTables_length{
+    display: none !important;
+}
+#content .dataTables_filter{
+    display: flex !important;
+    justify-content: center !important;
+    float: left !important;
+    margin-left: 15px;
+    position: relative !important;
+    left: 10px;
+}
+#content .dataTables_filter label{
+    padding: 15px 0 0 0 !important;
+    margin-bottom: -2px !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center;
+}
+#content .dataTables_filter label input{
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgb(163, 163, 163);
+    box-shadow: none;
+    padding-left: 0;
+    width: 200px !important;
+}
+#content .dataTables_filter label .fa-search{
+    opacity: 0.6;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+/* table-control */
+#content .btn-ctrl{
+    opacity: 0.7;
+    outline: black;
+}
+#content .btn-tambah{
+    display: flex;
+    /* margin-left: auto; */
+    width: 35px;
+    height: 35px;
+}
+#content .btn-edit,
+#content .btn-delete{
+    width: 30px;
+    height: 30px;
+    padding: 4px 10px 0 10px;
+}
+#content .add{
+    font-size: 21px;
+    margin: 0 0 0 -6px;
+}
+#content .ip2{
+    font-size: 20px;
+    margin: 0 0 0 -6px;
+}
+#content .card-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#content .card-control>.tambah {
+    font-size: 14px;
+    padding-right: 15px;
+    color: rgba(0, 0, 0, 0.795);
+}
+
+#content .card-control .periode{
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid rgb(31, 132, 192);
+    width: 27.5%;
+}
+#content .card-control .periode .kosong{
+    color: #df2020;
+}
+#content .periode-text{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.85);
+    border-right: 1px solid rgb(31, 132, 192);
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    padding: 6px 10px;
+}
+#content .periode-info{
+    font-size: 14px;
+    color: #000;
+    opacity: 0.85;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px;
+}
+#content .card-control .blank{
+    margin-right: auto;
+}
+#content .card-control .btn-edit{
+    padding: 3px 3px 3px 12px;
+    box-shadow: none;
+}
+#content .card-control .icon-edit{
+    color: rgb(31, 132, 192);
+    font-size: 21px;
+}
+
+
+/* modal */
+#content .modal-title{
+    font-size: 16px;
+    color: rgb(31, 132, 192);
+}
+#content .title-delete{
+    color: #df2020;
+}
+#content .modal-body{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+}
+#content .modal-lg {
+    max-width: 30%;
+}
+#content .modal-lg-tambah {
+    max-width: 50%;
+}
+#content .modal-lg-edit {
+    max-width: 50%;
+}
+#content .modal-body div label {
+    max-width: 150px;
+}
+#content .modal-content{
+    padding:  10px 15px 10px;
+}
+#content .modal-content .close{
+    color: #df2020;
+    outline: none;
+    font-size: 27px;
+}
+#content .modal-body input,
+#content .modal-body select
+{
+    font-size: 14px;
+}
+#content .modal-body select
+{
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) no-repeat right transparent;
+    -webkit-appearance: none;
+    background-size:
+    9px 9px,
+    9px 9px;
+    background-position-x:  calc(100% - 10px);
+}
+#content .modal-footer .btn{
+    font-size: 14px;
+}
+#content .modal-footer .btn-link{
+    box-shadow: none;
+}
+#content .edit-peserta .modal-body{
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+}
+#content .edit-peserta .modal-body .row-1{
+    width: 50%;
+}
+#content .edit-peserta .modal-body .row-2{
+    width: 50%;
+}
+#content .modal-body .col-sm-6{
+    margin: auto;
+}
+#content .modal-body .nama-peserta{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+#content .edit-peserta .hijau{
+    color: #44AB72;
+}
+#content .edit-peserta .merah{
+    color: #df2020;
+}
+#content .modal-body-1 {
+    padding-top: 20px;
+}
+#content .modal-body-1 .form-group{
+    align-items: center;
+    text-align: left;
+    justify-content: start;
+}
+#content .modal-body-periode .form-group{
+    margin-right: auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+#content .modal-body-periode .form-group div{
+    display: block;
+    justify-content: center;
+    margin: auto;
+    width: 50%;
+}
+#content .modal-body-1 .form-group>div{
+    margin-right: auto;
+}
+#content .modal-body-1 .form-group label{
+    padding-left: 15px;
+}
+#content .modal-body .success-text-tambah{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .modal-body .error-text{
+    font-size: 13px;
+}
+
+#content #modaleditperiode input{
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+
+#content .form-instruktur{
+    margin-top: 20px;
+}
+
+#content .pilih{
+    margin-top: 0px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+/* select2 */
+.select2-container{
+    font-size: 13px !important;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media screen and (max-width: 1366px) and (min-width:1000px) {
+    #content .card-control .periode{
+        width: 320px;
+    }
+    #content .periode-info{
+        padding: 0px 20px;
+    }
+    #content .page-content>div.row .menu-pertemuan{
+        width: 10%;
+    }
+    #content .page-content>div.row .cards{
+        width: 90%;
+    }
+    #content #daftar-jadwal .col-sm-4{
+        width: 25%;
+    }
+    #content .modal-lg {
+        max-width: 40%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    #sidebar {
+        position: fixed;
+        z-index: 9999;
+    }
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    #content {
+        width: 100%;
+        padding: 0px;
+        min-height: 100vh;
+        transition: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #content .page-content {
+        padding: 0px 10px 10px 10px;
+    }
+    #content .container-fluid {
+        margin-top: -7px;
+        padding: 0 5px 0px 7px;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 9998;
+        opacity: 0;
+        /* animate the transition */
+        transition: all 0.5s ease-in-out;
+    }
+    #content .nav-angkatan {
+        justify-content: center;
+        margin-top: -20px;    
+        border: none;
+    }
+    #content .nav-angkatan>a {
+        height: 45px;
+        padding: 30px 30px 30px 30px;
+    }
+    #nav-header{
+        margin-left: 50px;
+    }
+    #tab-pertemuan {
+        width: 100%;
+        border:none;
+        margin-right: 0px;
+    }
+    #tab-pertemuan a{
+        text-align: center;
+    }
+    #tab-pertemuan a.active{
+        text-decoration: none
+    }
+    #content .page-content>div.row .menu-pertemuan{
+        width: 25%;
+    }
+    #content .page-content>div.row .cards{
+        width: 75%;
+    }
+    #content .table {
+        width: 85%;
+    }
+    #content .card-control {
+        width: 85%;
+    }
+    #content #search1{
+        max-width: 60%;
+    }
+    #content .modal-lg {
+        max-width: 90%;
+        margin: auto;
+    }
+    #content .card nav {
+        width: 90%;
+        margin: auto;
+    }
+    #content .cards {
+        padding: 20px 15px !important;
+    }
+    #content .card-control>.btn-edit {
+        padding-right: 40px !important;
+    }
+    #content .card-jadwal .aa {
+        width: 70%;
+        margin-right: auto;
+    }
+    #content .card-control .periode{
+        width: 400px;
+    }
+    #content .periode-text{
+        width: 100%;
+    }
+    #content .periode-info{
+        padding: 0px 10px;
+    }
+    #content .card-control{
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    #content .modal-lg-tambah {
+        max-width: 90%;
+        margin: auto;
+    }
+    #content .modal-lg-edit {
+        max-width: 90%;
+        margin: auto;
+    }
+    #content .modal-body-periode .form-group div{
+        width: 80%;
+    }
+}

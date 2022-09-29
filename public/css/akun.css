@@ -1,0 +1,609 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap";
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fafafa;
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 1.1em;
+    line-height: 1.7em;
+    color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.navbar {
+    padding: 15px 10px solid black;
+    background: #fff;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed #ddd;
+    margin: 40px 0;
+}
+
+.collapsing {
+    transition-duration: 0.45s;
+} 
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+#sidebar {
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    color: rgb(32, 32, 32);
+    transition: all 0.3s;
+    user-select: none;
+}
+#sidebar.active {
+    margin-left: -275px;
+}
+
+/* sidebar-head */
+#sidebar .sidebar-heading {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    text-align: center;
+}
+#sidebar .hr-logo{
+    width: 275px;
+    border-width: 1px;
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+/* sidebar-menu */
+#sidebar .sidebarmenu{
+    position: relative;
+    font-size: 14px;
+    font-weight: 510;
+}
+#sidebar .activemenu, 
+#sidebar .inactivemenu:hover{
+    color: black;
+    opacity: 0.9;
+}
+#sidebar .inactivemenu{
+    color: black;
+    opacity: 0.5;
+}
+#sidebar ul.components {
+    padding: 10px solid black 0px;
+}
+#sidebar div ul.nav{
+    padding-right: 50px;
+}
+.panel-heading{
+    padding-top: 16px;
+    padding-right: 8px;
+    height: 100%;
+}
+.panel-heading>a{
+    display:block;
+    color:rgb(167, 167, 167);
+    font-size:14px;
+    border-left: 4px solid transparent;
+    padding: 7px;
+    z-index: -1;
+}
+.panel-heading>a.activemenu{
+    color: rgb(0, 0, 0);
+    opacity: 0.8;
+    border-left-color: rgb(31, 132, 192);
+}
+.panel-heading>a.inactivemenu:hover{
+    border-left-color: rgba(31, 133, 192, 0.6);
+}
+
+/* sidebar-iconmenu */
+#sidebar .iconmenu{
+    width: 21px; 
+    height: 21px;
+    margin-right: 13px;
+    margin-left: 7px;
+    position: relative;
+    bottom: 1px;
+    opacity: 0.9;
+}
+.panel-heading .arrowicon {
+    float: right;
+    height: 18px;
+    width: 18px;
+    transition: all 0.5s;
+    margin: auto;
+}
+.panel-heading.active .arrowicon {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+/* sidebar-submenu */
+#sidebar ul li a {
+    padding: 14px;
+
+}
+#sidebar div ul a {
+    font-size: 0.9em !important;
+    padding-left: 20px !important;
+    display: block;
+    height: 45px;
+}
+#sidebar .nav.submenubg{
+    background-color: rgb(230, 230, 230);
+    width: 87%;
+    margin-top: 10px solid black;
+    margin-left: 20px;
+    margin-bottom: 10px solid black;
+    border-radius: 5px;
+    border: solid rgb(199, 199, 199);
+    border-width: 1px;
+}
+#sidebar .panel-body ul li a.active{
+    opacity: 0.9;
+}
+#sidebar div ul a {
+    background-color: transparent;
+    opacity: 0.5;
+    color: rgb(0, 0, 0);
+}
+#sidebar div ul a.active,
+#sidebar div ul a:hover {
+    opacity: 0.8;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+#content {
+    width: calc(100% - 275px);
+    padding: 0px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+#content.active {
+    width: 100%;
+}
+#content .container-fluid {
+    padding: 0 20px 0px 21px;
+}
+#content .content-header{
+    margin: auto;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+#content .top-info{
+    margin: auto;
+    text-align: center;
+}
+#content .profile-icon{
+    user-select: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px solid black;
+}
+#content .material-icons{
+    opacity: 1;
+    font-size: 160px;
+    color: rgb(31, 132, 192);
+}
+#content .nama{
+    margin: auto;
+    font-size: 15px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+#content .role{
+    margin: auto;
+    margin-top: 10px solid black;
+    font-size: 14px;
+    opacity: 0.8;
+}
+#content .user-info{
+    margin: auto;
+    margin-bottom: 10px solid black;
+}
+#content .user-info>form>div>label{
+    text-align: center;
+    opacity: 0.9;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+#content .user-info>form>div{
+    margin-bottom: 25px;
+}
+#content .user-info>form>div>input{
+    margin: auto;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid rgb(197, 197, 197);
+    background-color: #fafafa;
+    width: 30%;
+}
+#content .profil-divider{
+    border-width: 1px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.22);
+}
+#content .profil{
+    margin: auto;
+    width: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.22);
+}
+#content .profil-menu{
+    font-size: 14px;
+    background-color: #fff;
+    width: 17%;
+    user-select: none;
+}
+#content .profil-content{
+    text-align: center;
+    background-color: #fff;
+    border-left: 1px solid rgba(0, 0, 0, 0.22);
+    width: 83%;
+}
+#content .profil-content .profil-btn{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    text-align: end;
+    font-size: 14px;
+}
+#content .list-group-item{
+    border: none;
+    border-right: 2px solid transparent;
+    margin: auto;
+    color: rgba(0, 0, 0, 0.5);
+}
+#content .list-group-item.active,
+#content .list-group-item.active:hover{
+    border: none;
+    border-right: 2px solid rgb(31, 132, 192);
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.80);
+}
+#content .list-group-item:hover{
+    border-right: 2px solid rgba(31, 133, 192, 0.5);
+    color: rgba(0, 0, 0, 0.80);
+}
+#content .list-group .account-icon{
+    align-items: center;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 1.3rem;
+    margin-right: 7px;
+}
+#content .list-group .password-icon{
+    align-items: center;
+    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 20px;
+    margin-right: 7px;
+}
+#content .list-group-item{
+    padding: 15px 15px;
+}
+#content #profil .error-text{
+    font-size: 13px !important;
+}
+#content .alert-success{
+    width: 75%;
+    margin: auto;
+}
+#content .success-text{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+#content .alert-danger{
+    width: 75%;
+    margin: auto;
+}
+#content .error-text{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+}
+
+
+/* topnavbar */
+#content .navbar-custom {
+    background: rgb(77,97,140);
+    background: linear-gradient(180deg, rgba(77,97,140,1) 0%, rgba(50,118,172,1) 50%, rgb(31, 132, 192) 100%);
+    height: 70px;
+    user-select: none;
+}
+#nav-header{
+    font-size: 16px;
+    color: rgb(235, 235, 235);
+    display: block;
+    position: absolute;
+    margin-left: 55px;
+}
+#nav-header.show {
+    display: block;
+}
+#content .page-content {
+    padding: 0px 35px 35px 35px;
+}
+#content .toggleicon {
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+/* user-menu */
+#content .dropdown.hide{
+    display: none;
+}
+#content .dropdown-menu {
+    background-color: #fafafa;
+}
+#content .dropdown-menu a {
+    font-size: 13.4px;
+    font-weight: 510;
+    color: rgb(0, 0, 0);
+    opacity: 0.5;
+    padding: 8px;
+}
+#content .dropdown-menu a:hover {
+    opacity: 0.8;
+}
+#content .dropdown-menu a:focus {
+    background-color: transparent;
+}
+#content .dropdown-menu .dropdown-divider {
+    border-color: rgb(204, 204, 204);
+}
+#content .dropdown-menu a>span.material-icons-outlined {
+    font-size: 18px;
+    margin-right: 18px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+#content .vertical-line{
+    border-left: 1px solid rgb(209, 209, 209);
+    margin-left: 18px;
+    margin-right: 0px;
+    opacity: 0.8;
+}
+#content .username.hide{
+    display: none;
+}
+#content .username{
+    color: rgb(235, 235, 235);
+    font-size: 14.5px;
+    font-weight: 510;
+    margin-left: auto;
+}
+#content .img-custom{
+    margin-right: -13px;
+}
+
+.flex-parent {
+    display: flex;
+}
+
+/* card */
+#content .card {
+    background-color: rgb(230, 230, 230);
+    margin: auto;
+    width: 40%;
+}
+
+/* modal */
+#content .modal-title{
+    font-size: 16px;
+    color: rgb(31, 132, 192);
+}
+#content .modal-body{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.74);
+    margin: auto;
+}
+#content .modal-body .form-group{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    padding: 0 50px 20px 50px;
+}
+#content .modal-lg {
+    max-width: 30%;
+}
+#content .modal-body div label {
+    max-width: 150px;
+}
+#content .modal-content{
+    padding:  10px solid black 15px 10px solid black;
+}
+#content .modal-content .close{
+    color: #df2020;
+    outline: none;
+    font-size: 27px;
+}
+#content .modal-body input{
+    justify-content: center;
+    margin: auto;
+    font-size: 14px;
+}
+#content .modal-footer .btn{
+    font-size: 14px;
+}
+#content .modal-footer .btn-link{
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+@media(max-width: 1600px){
+    #content .profil-menu{
+        width: 17%;
+    }
+    #content .profil-content{
+        width: 83%;
+    }
+    #content .profil{
+        width: 75%;
+    }
+}
+
+@media(max-width: 1366px){
+    #content .profil-menu{
+        width: 21%;
+    }
+    #content .profil-content{
+        width: 79%;
+    }
+    #content .profil{
+        width: 75%;
+    }
+}
+
+@media (max-width: 1000px) {
+    #sidebar {
+        position: fixed;
+        z-index: 9999;
+    }
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+    #content {
+        width: 100%;
+        padding: 0px;
+        min-height: 100vh;
+        transition: none;
+        position: absolute;
+        top: 0px;
+        right: 0;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #content .page-content {
+        padding: 0px 13px;
+    }
+    #content .container-fluid {
+        margin-top: -7px;
+        padding: 0 5px 0px 7px;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        /* full screen */
+        width: 100vw;
+        height: 100vh;
+        /* transparent black */
+        background: rgba(0, 0, 0, 0.7);
+        /* middle layer, i.e. appears below the sidebar */
+        z-index: 9998;
+        opacity: 0;
+        /* animate the transition */
+        transition: all 0.5s ease-in-out;
+    }
+    #nav-header{
+        margin-left: 50px;
+    }
+    #content .modal-lg {
+        max-width: 80%;
+        margin: auto;
+        align-items: center;
+    }
+    #content .modal-body{
+        text-align: center;
+        justify-content: center;
+    }
+    #content .card {
+        width: 100%;
+    }
+    #content .profil{
+        width: 100%;
+        display: block;
+        background-color: #fff;
+    }
+    #content .profil-divider{
+        margin-bottom: 25px;
+    }
+    #content .user-info>form>div>input{
+        width: 60%;
+    }
+    #content .profil-menu{
+        width: 100%;
+    }
+    #content .list-group{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.22);
+        border-radius: 0%;
+    }
+    #content .list-group-item{
+        border: none;
+        text-align: center;
+    }
+    #content .profil-content{
+        width: 100%;
+        border-left: none;
+    }
+    #content .profil-content .profil-btn{
+        margin-top: 40px;
+    }
+    #content .profile-icon{
+        margin-top: 25px;
+    }
+    #content .list-group-item{
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    #content .list-group-item.active{
+        border: none;
+        border-radius: 0%;
+        border-bottom: 2px solid rgb(31, 132, 192);
+        background-color: transparent;
+        color: black;
+        color: rgba(0, 0, 0, 0.85);
+    }
+    #content .list-group-item:hover,
+    #content .list-group-item.active:hover
+    {
+        border-right: none;
+    }
+    
+}
